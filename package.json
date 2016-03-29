@@ -8,6 +8,7 @@
   "scripts": {
     "build.dev": "gulp build.dev --color",
     "build.dev.watch": "gulp build.dev.watch --color",
+    "prod": "gulp build.prod",
     "build.e2e": "gulp build.e2e --color",
     "build.prod": "gulp build.prod --color",
     "build.test": "gulp build.test --color",
@@ -100,7 +101,9 @@
     "typings": "^0.7.9",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "yargs": "^4.2.0"
+    "yargs": "^4.2.0",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.2.0"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.12",

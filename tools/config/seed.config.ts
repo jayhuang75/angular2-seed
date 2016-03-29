@@ -55,10 +55,14 @@ export class SeedConfig {
     { src: 'es6-shim/es6-shim.js', inject: 'shims' },
     { src: 'systemjs/dist/system.src.js', inject: 'shims' },
     { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims' },
+    { src: 'angular2/es6/dev/src/testing/shims_for_IE.js', inject: 'shims'},
     { src: 'rxjs/bundles/Rx.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/angular2.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/router.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT }
+    { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
+    { src: 'jquery/dist/jquery.min.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
+    { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
+    { src: 'bootstrap/dist/css/bootstrap.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT },
   ];
 
   // Declare local files that needs to be injected

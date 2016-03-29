@@ -2,13 +2,38 @@ import {provide, enableProdMode} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS, APP_BASE_HREF} from 'angular2/router';
 import {AppComponent} from './app/components/app.component';
+import {HTTP_BINDINGS} from 'angular2/http';
+import 'rxjs/Rx';
 
 if ('<%= ENV %>' === 'prod') { enableProdMode(); }
 
-bootstrap(AppComponent, [
-  ROUTER_PROVIDERS,
-  provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
-]);
+this.bindEvents = function () {
+  document.addEventListener('deviceready', function () {
+    bootstrap(AppComponent, [
+      ROUTER_PROVIDERS,
+      HTTP_BINDINGS,
+      provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
+    ]);
+  }, false);
+};
+
+//If cordova is present, wait for it to initialize, otherwise just try to
+//bootstrap the application.
+this.isCordovaApp = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
+
+
+if (this.isCordovaApp) {
+  this.bindEvents();
+} else {
+  console.log('no device');
+  bootstrap(AppComponent, [
+    ROUTER_PROVIDERS,
+    HTTP_BINDINGS,
+    provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
+  ]);
+}
+
+
 
 // In order to start the Service Worker located at "./sw.js"
 // uncomment this line. More about Service Workers here
