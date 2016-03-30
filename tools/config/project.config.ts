@@ -4,13 +4,16 @@ import {InjectableDependency} from './seed.config.interfaces';
 
 export class ProjectConfig extends SeedConfig {
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
-
+  DEPLOY_DEST       = '../www';
   constructor() {
     super();
-    // this.APP_TITLE = 'Put name of your app here';
+    this.APP_TITLE = 'Micro Saver';
     let additional_deps: InjectableDependency[] = [
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
+      { src: 'jquery/dist/jquery.min.js', inject: 'libs' },
+      { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs'},
+      { src: 'bootstrap/dist/css/bootstrap.css', inject: true },
     ];
 
     const seedDependencies = this.NPM_DEPENDENCIES;

@@ -49,6 +49,7 @@ gulp.task('build.prod', (done: any) =>
               'build.bundles',
               'build.bundles.app',
               'build.index.prod',
+              'build.cordova.deploy',
               done));
 
 // --------------

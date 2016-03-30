@@ -35,6 +35,7 @@ export class SeedConfig {
   PROD_DEST            = `${this.DIST_DIR}/prod`;
   TMP_DIR              = `${this.DIST_DIR}/tmp`;
   APP_DEST             = `${this.DIST_DIR}/${this.ENV}`;
+  ASSETS_DEST          = `${this.APP_DEST}/assets`;
   CSS_DEST             = `${this.APP_DEST}/css`;
   JS_DEST              = `${this.APP_DEST}/js`;
   APP_ROOT             = this.ENV === 'dev' ? `${this.APP_BASE}${this.APP_DEST}/` : `${this.APP_BASE}`;
@@ -59,10 +60,7 @@ export class SeedConfig {
     { src: 'rxjs/bundles/Rx.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/angular2.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/router.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'jquery/dist/jquery.min.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'bootstrap/dist/css/bootstrap.css', inject: true, env: ENVIRONMENTS.DEVELOPMENT },
+    { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT }
   ];
 
   // Declare local files that needs to be injected
