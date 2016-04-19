@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/cordova/cordova.d.ts"/>
 import {Component, NgZone, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {WeiFormBuilder} from '../../shared/directives/form-builder/form-builder';
