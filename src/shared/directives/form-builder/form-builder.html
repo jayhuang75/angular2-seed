@@ -1,0 +1,11 @@
+<p class="lead">{{formData.name}}</p>
+<hr/>
+
+<expenses-list *ngIf="isExpenseForm() && showExpenseData()"></expenses-list>
+
+<income-list *ngIf="isIncomeForm() && showInComeData()"></income-list>
+
+<div>
+  <question-builder [model]="questionModel" [formID]="formData.formID"></question-builder>
+</div>
+

@@ -122,7 +122,8 @@ export class SeedConfig {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       'angular2/*': `${this.APP_BASE}angular2/*`,
       'rxjs/*': `${this.APP_BASE}rxjs/*`,
-      '*': `${this.APP_BASE}node_modules/*`
+      '*': `${this.APP_BASE}node_modules/*`,
+      'underscore': `${this.APP_BASE}node_modules/underscore/underscore-min.js`
     },
     packages: {
       angular2: { defaultExtension: false },

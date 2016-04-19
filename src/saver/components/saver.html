@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <blockquote>
+    <b>Saver! Daily friend help you save money!</b>
+    <p>Take a photo of receipt for every spend you got!</p>
+  </blockquote>
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+
+  <button type="button"
+          class="btn btn-primary btn-lg btn-block"
+          (click)="takePhoto()" *ngIf="isCordovaApp">Record a receipt!</button>
+
+  <div *ngIf="!isCordovaApp">
+    <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+    <button type="button" (click)="desktopUpload()">Upload</button>
+  </div>
+
+  <div *ngIf="isLoading">Processing...</div>
+  {{isFirstTime}}
+</div>
+
+<!--<div class="container-fluid" *ngIf="isFirstTime">-->
+  <!--<div *ngFor="#formData of formList">-->
+    <!--<wei-form-builder-->
+      <!--*ngIf="formData.show"-->
+      <!--[formData]="formData">-->
+    <!--</wei-form-builder>-->
+  <!--</div>-->
+<!--</div>-->
+

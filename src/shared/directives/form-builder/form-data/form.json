@@ -1,0 +1,96 @@
+{
+  "forms" : [
+    {
+      "formID" : "IncomeForm",
+      "show" : true,
+      "name" : "Your Fix Income",
+      "icon" : "glyphicon-user",
+      "unchecked" : "unchecked",
+      "fields" : [
+        {
+          "text" : "Salary Income Net per month",
+          "controlType" : "number",
+          "key" : "incomeNet",
+          "required" : true,
+          "order": 1
+        },
+        {
+          "text" : "Other Income per month",
+          "controlType" : "number",
+          "key" : "otherIncome",
+          "required": true,
+          "order" : 2
+        },
+        {
+          "text" : "Next",
+          "controlType" : "button",
+          "key" : "button",
+          "order" : 3,
+          "required" : false,
+          "func" : "next"
+        }
+      ]
+    },
+    {
+      "formID" : "ExpenseForm",
+      "show" : false,
+      "name" : "Your Fix Expenses",
+      "icon" : "glyphicon-user",
+      "unchecked" : "unchecked",
+      "fields" : [
+        {
+          "text" : "Select your expenses",
+          "controlType" : "dropdown",
+          "key" : "expenseType",
+          "required" : true,
+          "order" : 1,
+          "options": [
+            {
+              "name" : "Mortgage (Rent)",
+              "value" : "mortgageRent"
+            },
+            {
+              "name" : "Car",
+              "value" : "car"
+            },
+            {
+              "name" : "Utilities(Cell, TV, Internet)",
+              "value" : "utilities"
+            },
+            {
+              "name" : "Transportation",
+              "value" : "transport"
+            },
+            {
+              "name" : "Others (payment plan)",
+              "value" : "others"
+            }
+          ]
+        },
+        {
+          "text" : "How Much",
+          "controlType" : "number",
+          "key" : "expense",
+          "required": true,
+          "order" : 2
+        },
+        {
+          "text" : "Add",
+          "controlType" : "button",
+          "key" : "button",
+          "order" : 2,
+          "required" : false,
+          "func" : "add"
+        },
+        {
+          "text" : "Let's start",
+          "controlType" : "button",
+          "key" : "button",
+          "order" : 2,
+          "required" : false,
+          "func" : "start"
+        }
+      ]
+    }
+  ]
+}

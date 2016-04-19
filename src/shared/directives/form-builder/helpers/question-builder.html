@@ -1,0 +1,41 @@
+<div>
+  <form [ngFormModel]="form"
+        #f="ngForm">
+
+    <div class="form-group"
+         *ngFor="#question of model.questions">
+
+      <div [ngSwitch]="question.controlType">
+
+        <!--Number type Input-->
+        <div *ngSwitchWhen="'number'">
+          <input
+            class="form-control"
+            placeholder="{{question.text}}"
+            type="{{question.controlType}}"
+            id="{{question.key}}"
+            ngControl="{{question.key}}">
+        </div>
+
+        <!--Select type Input-->
+        <div *ngSwitchWhen="'dropdown'">
+          <select ngControl="{{question.key}}" class="form-control">
+            <option *ngFor="#o of question.options" [value]="o.value">{{o.name}}</option>
+          </select>
+        </div>
+
+        <!--Add button-->
+        <div *ngSwitchWhen="'button'">
+          <button type="{{question.controlType}}"
+                  class="btn btn-primary btn-lg btn-block"
+                  (click)="buttonClick(question.func, formID)"
+                  [disabled]="!f.form.valid">{{question.text}}</button>
+        </div>
+
+      </div>
+
+      <div class="errorMessage" *ngIf="!f.form.controls[question.key].valid">*required</div>
+    </div>
+
+  </form>
+</div>
