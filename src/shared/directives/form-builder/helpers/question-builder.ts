@@ -40,15 +40,12 @@ export class QuestionBuilder implements OnInit {
   buttonClick(buttonFunc, thisFormID) {
     switch (buttonFunc) {
       case 'next':
+            this.incomeService.add(this.form.value);
             var broadcastEvent = {
               'action' : buttonFunc,
-              'formID_hide' : thisFormID,
-              'formID_show' : thisFormID + 1,
-              'submit_data' : this.form.value
+              'current_page' : thisFormID
             };
-            //this.formActionEmitter.emit(broadcastEvent);
-            this.incomeService.add(this.form.value);
-
+            this.formActionEmitter.emit(broadcastEvent);
             break;
       case 'add':
             this.expenseListService.add(this.form.value);

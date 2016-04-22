@@ -1,6 +1,7 @@
 {
   "forms" : [
     {
+      "id": 0,
       "formID" : "IncomeForm",
       "show" : true,
       "name" : "Your Fix Income",
@@ -32,6 +33,7 @@
       ]
     },
     {
+      "id": 1,
       "formID" : "ExpenseForm",
       "show" : false,
       "name" : "Your Fix Expenses",
