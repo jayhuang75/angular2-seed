@@ -1,27 +1,31 @@
 import {Component, NgZone, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 //import * as _ from 'underscore';
+import {ConfigService} from '../../shared/services/config.service';
 
 @Component({
   selector: 'saver',
   moduleId: module.id,
   templateUrl: './saver.html',
-  styleUrls: ['./saver.css']
+  styleUrls: ['./saver.css'],
+  providers: [ConfigService]
 })
 
 export class SaverCmp implements OnInit {
   filesToUpload: Array<File>;
-  local_API: string = 'http://localhost:8080/upload';
-  static_web_url: string = 'https://google.com';
+  local_API: string;
+  static_web_url: string;
   isCordovaApp: boolean;
   isLoading: boolean;
   _zone: any;
   router: Router;
   isUploaded: boolean = false;
   uploadSuccessMsg: string = 'You have already uploaded your file with success!';
+  config: Array<any>;
 
   constructor(_zone : NgZone,
-              _router : Router
+              _router : Router,
+              private _configService: ConfigService
   ) {
     this.filesToUpload = [];
     this.isLoading = false;
@@ -31,6 +35,12 @@ export class SaverCmp implements OnInit {
 
   ngOnInit() {
     this.isCordovaApp = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
+    this._configService.getConfig().subscribe(res => {
+        this.config = res;
+        console.log(this.config);
+        this.local_API = this.config['local_API'];
+        this.static_web_url = this.config['static_web_url'];
+    });
   }
 
   // All this below is for the desktop
