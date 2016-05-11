@@ -1,0 +1,4 @@
+{
+    "local_API": "http://localhost:8080/upload",
+    "static_web_url": "http://google.com"
+}

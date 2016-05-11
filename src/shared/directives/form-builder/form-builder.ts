@@ -8,8 +8,9 @@ import {ExpenseListService} from '../../services/expense-list.service';
 
 @Component({
   selector : 'wei-form-builder',
+    moduleId: module.id,
   directives: [QuestionBuilder, ExpensesList, IncomeList],
-  templateUrl : './shared/directives/form-builder/form-builder.html',
+  templateUrl : './form-builder.html',
   providers: [ExpenseListService]
 })
 

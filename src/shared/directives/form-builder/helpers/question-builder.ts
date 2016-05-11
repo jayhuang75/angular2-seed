@@ -7,7 +7,8 @@ import {IncomeService} from '../../../services/income.service';
 
 @Component({
   selector : 'question-builder',
-  templateUrl : './shared/directives/form-builder/helpers/question-builder.html',
+  moduleId: module.id,
+  templateUrl : './question-builder.html',
   providers: [FormBuilder, IncomeService, ExpenseListService]
 })
 

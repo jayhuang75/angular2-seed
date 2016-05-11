@@ -1,8 +1,5 @@
 export class IncomeService {
 
-  constructor () {
-  }
-
   get(): Array<any> {
     return JSON.parse(localStorage.getItem('income'));
   }

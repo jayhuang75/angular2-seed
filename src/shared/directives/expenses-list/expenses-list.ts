@@ -3,7 +3,8 @@ import {ExpenseListService} from '../../services/expense-list.service';
 
 @Component({
   selector : 'expenses-list',
-  templateUrl : './shared/directives/expenses-list/expenses-list.html'
+  moduleId: module.id,
+  templateUrl : './expenses-list.html'
 })
 
 export class ExpensesList implements OnInit {

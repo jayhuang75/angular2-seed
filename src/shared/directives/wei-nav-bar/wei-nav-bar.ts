@@ -5,7 +5,8 @@ import {EmitterService} from '../form-builder/helpers/emitter-service';
 @Component({
   selector : 'wei-nav-bar',
   directives: [ROUTER_DIRECTIVES],
-  templateUrl : './shared/directives/wei-nav-bar/wei-nav-bar.html'
+  moduleId: module.id,
+  templateUrl : './wei-nav-bar.html'
 })
 
 export class WeiNavBar implements OnInit {

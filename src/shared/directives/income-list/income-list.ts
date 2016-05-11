@@ -2,7 +2,8 @@ import {Component, OnInit} from 'angular2/core';
 
 @Component({
   selector : 'income-list',
-  templateUrl : './shared/directives/income-list/income-list.html'
+  moduleId: module.id,
+  templateUrl : './income-list.html'
 })
 
 export class IncomeList implements OnInit {
